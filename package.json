@@ -1,0 +1,46 @@
+{
+  "name": "electron_app",
+  "version": "1.0.0",
+  "main": "dist/main/index.cjs",
+  "author": "Jimmy",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vitejs/plugin-vue": "2.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-define-config": "~1.0.9",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "vue-eslint-parser": "^7.11.0",
+    "electron": "16.0.8",
+    "electron-builder": "22.14.5",
+    "typescript": "4.5.5",
+    "vite": "2.7.13",
+    "vite-plugin-resolve": "1.4.4",
+    "vue": "3.2.29",
+    "vue-tsc": "0.31.1"
+  },
+  "scripts": {
+    "dev": "node scripts/watch.mjs",
+    "prebuild": "vue-tsc --project packages/renderer/tsconfig.json --noEmit && node scripts/build.mjs",
+    "build": "electron-builder",
+    "debug": "npm run prebuild && vite ./packages/renderer"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "env": {
+    "//": "Used in build scripts",
+    "PORT": 3344
+  },
+  "keywords": [
+    "vite",
+    "electron",
+    "vue3",
+    "rollup"
+  ]
+}
